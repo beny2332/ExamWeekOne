@@ -323,3 +323,27 @@ function Mission3(newDeployment, militaryUnit){
 //       }
 //    console.log(
 //     Mission3(newDeployment, militaryUnit));
+
+// mission4
+// input1: Firearm Object
+// input2: אובייקט המכיל את כלל הנתונים על היחידה
+// output: אובייקט המכיל את כלל הנתונים על היחידה
+
+function Mission4(firearm, militaryUnit){
+    const firearms = militaryUnit.equipment.firearms
+    
+    if(firearms.find(f => f.type === firearm.type) && firearms.find(f => f.type === firearm.type).status === "Operational"){
+        const found = firearms.find(f => f.type === firearm.type)
+        found.quantity += firearm.quantity}
+    else{firearms.push(newFirearm)}
+
+    return militaryUnit
+}
+// const newFirearm = {
+//     type: "M4",
+//     quantity: 500,
+//     status: "Operational",
+// }
+// Mission4(newFirearm, militaryUnit);
+// console.log(militaryUnit.equipment.firearms);
+     

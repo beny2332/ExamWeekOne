@@ -364,3 +364,11 @@ function Mission5(militaryUnit){
     return `Total Training Weeks: ${totalWeeks}`
 }
 // console.log(Mission5(militaryUnit));
+
+module.exports = {
+    Mission1,
+    Mission2,
+    Mission3,
+    Mission4,
+    Mission5
+}

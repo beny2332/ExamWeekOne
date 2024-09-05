@@ -331,19 +331,36 @@ function Mission3(newDeployment, militaryUnit){
 
 function Mission4(firearm, militaryUnit){
     const firearms = militaryUnit.equipment.firearms
+    const existingFirearm  = firearms.find(f => f.type === firearm.type)
     
-    if(firearms.find(f => f.type === firearm.type) && firearms.find(f => f.type === firearm.type).status === "Operational"){
-        const found = firearms.find(f => f.type === firearm.type)
-        found.quantity += firearm.quantity}
-    else{firearms.push(newFirearm)}
+    if(existingFirearm && existingFirearm.status === firearm.status){
+        existingFirearm.quantity += firearm.quantity;
+    }
+    else{
+        firearms.push(newFirearm)
+    }
 
     return militaryUnit
 }
 // const newFirearm = {
-//     type: "M4",
+//     type: "M16 Rifle",
 //     quantity: 500,
-//     status: "Operational",
+//     status: "Non operational",
 // }
 // Mission4(newFirearm, militaryUnit);
 // console.log(militaryUnit.equipment.firearms);
-     
+
+// mission5
+// input: אובייקט המכיל את כלל הנתונים על היחידה
+// output: מחרוזת המכילה את כמות כלל השבועות בהכשרה
+
+function Mission5(militaryUnit){
+    const trainingPrograms = militaryUnit.trainingPrograms
+    let totalWeeks = 0
+    trainingPrograms.forEach(program => {
+        totalWeeks += program.duration
+    })
+
+    return `Total Training Weeks: ${totalWeeks}`
+}
+// console.log(Mission5(militaryUnit));
